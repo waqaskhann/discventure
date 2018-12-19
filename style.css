@@ -1,0 +1,472 @@
+* {
+	margin:0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box }
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.6rem;
+	font-color: white;	
+}
+
+header {
+	background-image: linear-gradient(to bottom, rgba(0,0,0, 0.1), rgba(0,0,0, 0.4)), url(header.jpg);
+	background-size: cover; 
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+.logo {
+	margin: 3rem 0 0 5rem;
+	float: left;
+}
+
+.logo img {
+	width: 40%;
+}
+
+li {
+	float: right;
+	margin: 5rem 4rem 0 2rem;
+	list-style: none;
+	font-size: 2rem;
+	font-weight: 400; 
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	transition: all .5s;
+}
+
+nav ul a:hover {
+	border-bottom: 1px solid green;
+	color: green;
+}
+
+.header-text {
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-30%);
+	text-align: center;
+}
+
+.heading-primary {
+	backface-visibility: hidden;	
+}
+
+#text-main {
+	display: block;
+	font-weight: 300;
+	font-size: 4rem;
+	letter-spacing: .5rem;
+	animation: moveInTop 2s ease-out;
+	margin-bottom: 1.5rem;
+	font-weight: 300;
+}
+
+#text-sub {
+	display: block;
+	font-weight: 300;
+	font-size: 3rem;
+	letter-spacing: .6rem;
+	animation: moveInBottom 2s ease-out;
+	margin-bottom: 4rem;
+	font-weight: 100;
+}
+
+@keyframes moveInTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0)
+	}
+}
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0)
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	20% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.btn:link,
+.btn:visited {
+	display: inline-block;
+	border-radius: 1.5rem;
+	backface-visibility: hidden;
+}
+
+.btn-white {
+	padding: .8rem 2rem .5rem 2rem;
+	color: white;
+	border: 1px solid white;
+	font-size: 2rem;
+	animation: fadeIn 3s;
+	font-weight: 300;
+} 
+
+
+/* DESTINATION SECTION */
+
+#destinations {
+	display: grid;
+  	place-items: center;
+}
+
+h2 {
+	font-size: 5rem;
+	font-weight: 300;
+	padding-top: 5rem;	
+	text-align: center;
+}
+
+p {
+	font-size: 2rem;
+	width: 80%;
+	margin: 3rem auto; 
+	font-weight: 300;
+	text-align: center;
+}
+
+.card {
+  position: relative;
+  width: 50%;
+  box-shadow: 0 0 2.5rem 0 rgba(0,0,0, .35);
+  margin-bottom: 3rem;
+}
+
+.card:last-of-type {
+	margin-bottom: 8rem;
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  border: 0.5px solid white;
+}
+
+.card::before {
+  top: 2.2rem;
+  bottom: 2.2rem;
+  right: 2.2rem;
+}
+
+.card::after {
+  bottom: 2.2rem;
+  left: 2.2rem;
+  right: 2.2rem;
+}
+
+.card__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.card__body {
+  background: rgba(0,0,0, .5);
+  color: white;
+  padding: 4rem;
+}
+
+.card__title,
+.card__text {
+  margin: 0;
+}
+
+.card__title {
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 300;
+  margin-bottom: .5em;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.card__text {
+  text-align: right;
+  width: 100%;
+}
+
+/*TOURS SECTION*/
+#tours {
+	background-color: #f1f1f1;
+	padding-bottom: 32rem;
+}
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.row {
+	width: 80%;
+	margin: 6rem auto;
+}
+
+.col-1-of-3 {
+	float:left;
+	display: inline-block;
+	width:25%;
+	height: 15rem;
+}
+
+.col-1-of-3:not(:last-of-type) {
+	margin-right: 12.5%;
+}
+
+.price-card {
+	perspective: 150rem;
+	moz-perspective: 150rem;
+	position: relative;
+	height:40rem;
+}
+
+.price-card-side {
+	border-radius: 3px;
+	box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.15);
+	transition: all 1.2s ease;
+	height: 40rem;
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	backface-visibility: hidden;
+	overflow: hidden;
+}
+
+.price-card-front {
+	background-color:white;
+}
+
+.price-card-back {
+	background-image: linear-gradient(to bottom right, #55c57a, #7ed56f);
+	transform: rotateY(180deg);
+}
+
+.price-card:hover .price-card-front {
+	transform: rotateY(-180deg);
+}
+
+.price-card:hover .price-card-back {
+	transform: rotateY(0deg);
+}
+
+
+/*CARD FRONT*/
+
+.card-picture {
+	background-size: cover;
+	height: 18rem;
+	background-blend-mode: screen;
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+	position: relative;
+}
+
+.card-picture-1 {
+/*	background-image: linear-gradient(to bottom right, #55c57a, #7ed56f), url(sea1.jpg);*/
+	background-image: linear-gradient(to bottom right, white, black), url(sea1.jpg);
+}
+
+.card-picture-2 {
+/*	background-image: linear-gradient(to bottom right, #55c57a, #7ed56f), url(mountain1.jpg);*/	
+	background-image: linear-gradient(to bottom right, white, black), url(mountain1.jpg);
+}
+
+.card-picture-3 {
+	/*background-image: linear-gradient(to bottom right, #55c57a, #7ed56f), url(forest.jpg);*/
+	background-image: linear-gradient(to bottom right, white, black), url(forest.jpg);
+}
+
+.card-heading {
+	padding: 1rem 1.5rem;
+	font-size: 2.5rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: right;
+	color: white;
+	position: absolute;
+	top: 12.3rem;
+	right: 2rem;
+	background-image: linear-gradient(to bottom right, #55c57a, #7ed56f);
+}
+
+.card-details {
+	width: 80%;
+	margin: 1.5rem auto;
+	height: 20rem;
+}
+
+.card-details ul {
+	list-style: none;	
+}
+
+.card-details li {
+	margin: 0; 
+	width: 100%;
+	padding: 1rem 1rem;
+	text-align: center !important;
+	font-size: 1.7rem;
+	font-weight: 300; 
+}
+
+.card-details li:not(:last-child) {
+	border-bottom: 1px solid #eee;
+}
+
+/*BACK SIDE STYLING*/
+
+.price-card-back {
+	text-align: center;
+}
+
+.card-price-only {
+	margin-top: 8rem;
+	text-align: center;
+	color: white;
+	font-size: 1rem;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.card-price-value {
+	margin-top: 2rem;
+	margin-bottom: 10rem;
+	text-align: center;
+	color: white;
+	font-size: 6rem;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+.btn-card {
+	padding: .8rem 2rem .5rem 2rem;
+	color: black;
+	background-color: white;
+	font-size: 1.4rem;
+	font-weight: 300;
+	display: inline-block;
+	border-radius: 1.5rem;
+	text-transform: uppercase; 
+} 
+
+
+
+
+/*ABOUT US SECTION*/
+
+#about-us {
+	height: 52rem;
+}
+.col-1-of-2 {
+	float:left;
+	display: inline-block;
+	width:48%;
+}
+
+.col-1-of-2:not(:last-of-type) {
+	margin-right: 4%;
+}
+
+#about-us .row .col-1-of-2 p {
+	width:100%;
+	margin: 0 0 5rem 0;
+}
+
+
+#about-us .row .col-1-of-2 p:last-child {
+	margin-bottom: 12rem;
+}
+
+.picture-container {
+	position: relative;
+	height: 25rem;	
+}
+
+#about-us .row .col-1-of-2 img {
+	width: 55%;
+	position: absolute;
+}
+
+.abt-photo {
+	box-shadow: 0 .5rem 2rem rgba(0,0,0,0.4);
+	border-radius: 3px;
+}
+
+.abt-pic-1{
+	top: -2rem;
+	left:0;
+}
+
+.abt-pic-2 {
+	top: 15%;
+	right: 0;
+}
+
+.abt-pic-3{
+	top: 42%;
+	left: 20%;
+}
+
+/*FOOTER*/
+
+.footer {
+	background-color: rgba(0,0,0,.7);
+	position: relative;
+	height: 22rem;
+}
+
+.footer-logo img {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.footer p {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%,0);
+	color: white;
+}
