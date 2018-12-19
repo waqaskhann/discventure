@@ -208,4 +208,8 @@
 	.picture-container {
 		display: none;
 	}
+	
+	#about-us p {
+		margin-bottom: 2rem;
+	}
 }
